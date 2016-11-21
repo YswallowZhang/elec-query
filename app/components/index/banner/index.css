@@ -1,0 +1,35 @@
+.banner {
+    width: 750 / 75rem;
+    height: 506 / 75rem;
+    margin: 0 auto;
+    position: relative;
+    background: url('./images/banner.png');
+    background-size: 750 / 75rem,  506 / 75rem;
+    background-repeat:no-repeat;
+}
+.title {
+    position: relative;
+    font-size: 64px;
+    text-align: center;
+    top: 161 / 75rem;
+    color:#fff08e;
+    z-index: 5;
+}
+[data-dpr="2"] .title {
+    font-size: 64 * 2px;
+}
+[data-dpr="3"] .title {
+    font-size: 64 * 3px;
+}
+.electricity-meter {
+    width: 381 / 75rem;
+    height: 381 / 75rem;
+    position: absolute; 
+    top: 58 / 75rem;
+    left:(750 - 381) / 2 / 75rem;
+    z-index: 1;
+    .elecmeter {
+        width: 381 / 75rem;
+        height: 381 / 75rem;
+    }
+}

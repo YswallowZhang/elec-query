@@ -1,0 +1,30 @@
+.set-box {
+    background-color: #fff;
+    width: 750 / 75rem;
+    height: 89 / 75rem;
+    position: relative;
+    margin: 0 auto;
+    font-size: 15px;
+    font-family: 'PingFang-SC-Regular'
+}
+[data-dpr='2'] .set-box {
+    font-size: 15 * 2px;
+}
+[data-dpr='3'] .set-box {
+    font-size: 15 * 3px;
+}
+.user-name {
+    line-height: 89 / 75rem;
+    margin-left: 36 / 75rem;
+    color: #676767;
+
+}
+.user-room {
+    line-height: 89 / 75rem;
+    color: #676767;
+
+}
+.set-flag {
+    margin-left: 27 / 75rem;
+    color: #28C39F;
+}

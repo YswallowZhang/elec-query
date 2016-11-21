@@ -1,0 +1,21 @@
+.confirm {
+    width: 614 / 75rem;
+    height: 92 / 75rem;
+    margin: 0 auto;
+    margin-top: 84 / 75rem;
+    line-height: 92 / 75rem;
+    background-color: #10e2ae;
+    color: #fff;
+    box-shadow: none;
+    outline: none;
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 8 / 75rem;
+    border-radius: 10 / 75rem;
+}
+[data-dpr="2"] .confirm {
+    font-size: 15 * 2px;
+}
+[data-dpr="3"] .confirm {
+    font-size: 15 * 3px;
+}

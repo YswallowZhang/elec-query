@@ -1,0 +1,49 @@
+.build-box {
+    width: 614 / 75rem;
+    height: 92 / 75rem;
+    margin: 0 auto;
+    margin-top: 84 / 75rem;
+    background-color: #fff;
+    border: 2px solid  #e6e6e6;
+    border-radius: 13 / 75rem;
+    position: relative;
+}
+.build-pic {
+    width: 41 / 75rem;
+    height: 37 / 75rem;
+    position: relative;
+    float: left;
+    margin-top: 24 / 75rem;
+    margin-left: 20 / 75rem;
+    margin-right: 18 / 75rem;
+}
+.choose-build {
+    float: left;
+    line-height:  92 / 75rem;
+    font-size: 15px;
+    color: #999999;
+}
+[data-dpr="2"] .choose-build {
+    font-size: 15 * 2px;
+}
+[data-dpr="3"] .choose-build {
+    font-size: 15 * 3px;
+}
+.build-drop {
+    position: absolute;
+    top:-2 / 75rem;
+    right: 0;
+    width: 90 / 75rem;
+    height: 90 / 75rem;
+    background-color: #10e2ae;
+    border-radius: 0 11 / 75rem 11 / 75rem 0;
+    .drop-pic {
+        width: 28 /75rem;
+        height: 19 / 75rem;
+        position: relative;
+        display: inline-block;
+        margin:  0 auto;
+        top: (90 - 19) / 2 / 75rem;
+        left:(90 - 28) / 2 / 75rem;
+    }
+}

@@ -1,0 +1,18 @@
+.content {
+    margin: 0 auto;
+    width: 750 / 75rem;
+}
+.top {
+    height: 84 / 75rem;
+    text-align: center;
+    line-height: 84 / 75rem;
+    background-color:#31d0ab;
+    color:#fff;
+    font-size: 15px;
+}
+[data-dpr='2'] .top {
+    font-size:  15 * 2px;
+}
+[data-dpr='3'] .top {
+    font-size:  15 * 3px;
+}

@@ -1,0 +1,41 @@
+.attention-box {
+    width: 750 / 75rem;
+    font-size: 12px;
+    padding-left: 37 /75rem; 
+    margin: 0 auto;
+}
+[data-dpr='2'] .attention-box {
+    font-size: 12 * 2px; 
+}
+[data-dpr='3'] .attention-box {
+    font-size: 12 * 3px; 
+}
+.attention-title {
+    color: #A5A5A5;
+    position: relative;
+    display: inline-block;
+    margin-top: 28 / 75rem;
+    margin-bottom: 24 / 75rem;
+}
+.attention-pic {
+    width: 15 / 75rem;
+    height: 22 / 75rem;
+    position: relative;
+    margin-right: 10 / 75rem;
+    top:4 / 75rem;
+}
+.attention-word {
+    color: #A5A5A5;   
+    line-height: 52 / 75rem;
+}
+.telephone {
+    color: #24CCA5;
+    position: relative;
+    top: 3 / 75rem;    
+    line-height: 52 / 75rem;
+    left:8 / 75rem;
+}
+.attention-list {
+    position: relative;
+    line-height: 52 / 75rem;
+}

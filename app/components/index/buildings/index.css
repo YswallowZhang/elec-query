@@ -7,6 +7,7 @@
     border: 2px solid  #e6e6e6;
     border-radius: 13 / 75rem;
     position: relative;
+    overflow: hidden;
 }
 .build-pic {
     width: 41 / 75rem;
@@ -18,10 +19,18 @@
     margin-right: 18 / 75rem;
 }
 .choose-build {
-    float: left;
+    position: absolute;
+    top: 0;
+    left: 79 / 75rem;
+    width: 600 / 75rem;
+    height: 87 / 75rem;
     line-height:  92 / 75rem;
     font-size: 15px;
     color: #999999;
+    background: rgba(255, 255, 255, 0);
+    border: none;
+    outline: none;
+    z-index: 3
 }
 [data-dpr="2"] .choose-build {
     font-size: 15 * 2px;

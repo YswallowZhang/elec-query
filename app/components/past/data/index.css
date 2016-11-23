@@ -9,16 +9,16 @@
     height: 96 / 75rem;
     line-height: 96 / 75rem;
     color:#333333;
-    padding-left: 0.49333333rem;   
-    padding-right: 36 / 75rem;
-    font-size: 18px;
+    margin-left: 39 / 75rem;   
+    margin-right: 39 / 75rem;
+    font-size: 16px;
     border-bottom: 1px solid #f0f0f0;
 }
 [data-dpr='2'] .list {
-    font-size: 18 *2px;
+    font-size: 16 *2px;
 }
 [data-dpr='3'] .list {
-    font-size: 18 *3px;
+    font-size: 16 *3px;
 }
 .unit {
     float: right;
@@ -39,7 +39,7 @@
 .elec-data {
     color: #F4D234;
     float: right;
-    margin-right: 24 / 75rem;
+    margin-right: 28 / 75rem;
     margin-left: 12 / 75rem;
 }
 .plus {

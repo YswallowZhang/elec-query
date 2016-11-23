@@ -1,18 +1,57 @@
 .content {
     margin: 0 auto;
     width: 750 / 75rem;
+    position: relative;
 }
 .top {
+    position: relative;
     height: 84 / 75rem;
     text-align: center;
     line-height: 84 / 75rem;
     background-color:#31d0ab;
     color:#fff;
     font-size: 15px;
+    border-bottom: 1px solid #2bc6a2;
 }
 [data-dpr='2'] .top {
     font-size:  15 * 2px;
 }
 [data-dpr='3'] .top {
     font-size:  15 * 3px;
+}
+.myCanvas {
+    position: relative;
+    background-color: #31d0ab;
+    background-image: url('./images/bg.png');
+    background-position: -70 / 75rem 260 / 75rem;
+    background-repeat:no-repeat;
+    background-size: 820 / 75rem 270 / 75rem;
+}
+.much {
+    position: absolute;
+    top: 427 / 75rem;
+    margin-left: 60 / 75rem;
+}
+.much-list {
+    float: left;
+    font-size: 16px;
+    color: #fff;
+    width: 105 / 75rem;
+    text-align: center;
+    line-height: 50 / 75rem;
+}
+[data-dpr='2'] .much-list {
+    font-size:  16 * 2px;
+}
+[data-dpr='3'] .much-list {
+    font-size:  16 * 3px;
+}
+.triangle {
+    border-top: 24 / 75rem solid transparent;
+    border-bottom: 24 / 75rem solid #fff;
+    border-right: 24 / 75rem solid transparent;
+    border-left: 24 / 75rem solid transparent;
+    position: absolute;
+    top: 33 / 75rem;
+    left: 134 / 75rem;
 }

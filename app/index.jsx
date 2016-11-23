@@ -7,7 +7,7 @@ const Banner = require('./components/index/banner/index.jsx');
 const Buildings = require('./components/index/buildings/index.jsx');
 const Rooms = require('./components/index/rooms/index.jsx');
 const Btn = require('./components/index/button/index.jsx');
-
+const Alert = require('./components/alert/index.jsx')
 const App = React.createClass({
     getInitialState() {
         return {
@@ -59,6 +59,7 @@ const App = React.createClass({
             <Btn 
                 sendInformation={this.sendInformation}
             />
+            
         </div>
     }
 })

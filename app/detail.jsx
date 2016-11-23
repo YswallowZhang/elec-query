@@ -10,14 +10,12 @@ const Attention = require('./components/detail/attention/index.jsx');
 
 
 const App = React.createClass({
-    getInitialState() {
-        
-    },
+    
     changeFlag() {
         this.setState({
 
         })
-    }
+    },
     render() {
         return <div>
             <Set/>

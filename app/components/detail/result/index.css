@@ -82,6 +82,13 @@
     line-height: 85 / 75rem;    
     padding-left: 37 /75rem;    
     color: #999999;
+    font-size: 13px;
+}
+[data-dpr='2'] .reading-date {
+    font-size: 13 * 2px;
+}
+[data-dpr='3'] .reading-date {
+    font-size: 13 * 3px;
 }
 .what-date {
     padding-left: 18 / 75rem;

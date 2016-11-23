@@ -9,10 +9,29 @@ const Data = require('./components/past/data/index.jsx');
 
 
 const App = React.createClass({
-
+    getInitialState() {
+        return {
+           data:[
+                {
+                    start:'30',
+                    end:'80',
+                    free:'30',
+                    rest:'20'
+                }, {
+                    start:'80',
+                    end:'120',
+                    free:'30',
+                    rest:'10'                  
+                }
+           ]
+        }
+    },
     render() {
         return <div>
-            <Line />
+            <Line 
+
+
+            />
             <Data />
             <Back />
         </div>

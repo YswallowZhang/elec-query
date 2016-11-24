@@ -53,5 +53,12 @@
     border-left: 24 / 75rem solid transparent;
     position: absolute;
     top: 33 / 75rem;
-    left: 134 / 75rem;
+    left: 554 / 75rem;
+}
+.dot {
+    width: 8 / 75rem;
+    height: 8 / 75rem;
+    background-color: #f2ffc7;
+    border-radius: 100%;
+    position:absolute;
 }

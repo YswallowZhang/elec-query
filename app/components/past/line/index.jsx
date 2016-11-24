@@ -2,7 +2,7 @@ const React = require('react');
 const css = require('./index.css');
 
 const arr = [120, 200, 80, 140, 50, 80];
-
+const arrMonth = ['05', '06', '07', '08', '09', '10'];
 const huansuan = (val, fontSize) => {
     return val / 75 * fontSize;
 };
@@ -22,9 +22,15 @@ const lineArr = arr.map(function (item, index) {
     }
 })
 
-
-console.log(lineArr[0].y)
+var last = null;
 const Line = React.createClass({
+    handle(event) {
+        var target = event.target;
+        target.style.color = '#fff391';
+        console.log(target)
+        this.refs.triangle.style.left = 29 + target.key * 105 + 'px'
+    },
+
     componentDidMount() {
 
         lineArr.unshift({y: 336, x: 45});
@@ -58,32 +64,17 @@ const Line = React.createClass({
                 height={window.lib.flexible.rem2px(422 / 75) + 'px'} 
                 className='myCanvas'>
             </canvas>
-            <div style={{width:'8px', height:'8px', backgroundColor:'red',borderRadius:'100%', position:'absolute', top:huansuan(lineArr[0].y + 76, fontSize) + 'px', left:huansuan(lineArr[0].x - 8, fontSize) + 'px'}}>
-
-            </div>
-             <div style={{width:'8px', height:'8px', backgroundColor:'red',borderRadius:'100%', position:'absolute', top:huansuan(lineArr[1].y + 76, fontSize) + 'px', left:huansuan(lineArr[1].x - 8, fontSize) + 'px'}}>
-
-            </div>
-             <div style={{width:'8px', height:'8px', backgroundColor:'red',borderRadius:'100%', position:'absolute', top:huansuan(lineArr[2].y + 76, fontSize) + 'px', left:huansuan(lineArr[2].x - 8, fontSize) + 'px'}}>
-
-            </div>
-             <div style={{width:'8px', height:'8px', backgroundColor:'red',borderRadius:'100%', position:'absolute', top:huansuan(lineArr[3].y + 76, fontSize) + 'px', left:huansuan(lineArr[3].x - 8, fontSize) + 'px'}}>
-
-            </div>
-             <div style={{width:'8px', height:'8px', backgroundColor:'red',borderRadius:'100%', position:'absolute', top:huansuan(lineArr[4].y + 76, fontSize) + 'px', left:huansuan(lineArr[4].x - 8, fontSize) + 'px'}}>
-
-            </div>
-             <div style={{width:'8px', height:'8px', backgroundColor:'red',borderRadius:'100%', position:'absolute', top:huansuan(lineArr[5].y + 76, fontSize) + 'px', left:huansuan(lineArr[5].x - 8, fontSize) + 'px'}}>
-
-            </div>
-            <ul className='much'>
-                <li className='much-list'>01</li>
-                <li className='much-list'>02</li>
-                <li className='much-list'>03</li>
-                <li className='much-list'>04</li>
-                <li className='much-list'>05</li>
-                <li className='much-list'>06</li>
-                <li className='triangle'></li>
+            {   
+                arr.forEach(function() {
+                    return <div className='dot'></div>
+                })
+            }
+            <ul className='much' onClick={this.handle}>
+                {
+                    arrMonth.forEach(function(item, index) {
+                        return <li className='much-list' key={index}>{item}</li>
+                    })
+                }
             </ul>
         </div>
     }

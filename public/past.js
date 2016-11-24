@@ -51,9 +51,9 @@
 
 	var css = __webpack_require__(172);
 
-	var Line = __webpack_require__(212);
-	var Back = __webpack_require__(216);
-	var Data = __webpack_require__(219);
+	var Line = __webpack_require__(213);
+	var Back = __webpack_require__(214);
+	var Data = __webpack_require__(217);
 
 	var App = React.createClass({
 	    displayName: 'App',
@@ -21837,16 +21837,17 @@
 /* 209 */,
 /* 210 */,
 /* 211 */,
-/* 212 */
+/* 212 */,
+/* 213 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var React = __webpack_require__(1);
-	var css = __webpack_require__(213);
+	var css = __webpack_require__(221);
 
 	var arr = [120, 200, 80, 140, 50, 80];
-
+	var arrMonth = ['05', '06', '07', '08', '09', '10'];
 	var huansuan = function huansuan(val, fontSize) {
 	    return val / 75 * fontSize;
 	};
@@ -21866,9 +21867,15 @@
 	    };
 	});
 
-	console.log(lineArr[0].y);
+	var last = null;
 	var Line = React.createClass({
 	    displayName: 'Line',
+	    handle: function handle(event) {
+	        var target = event.target;
+	        target.style.color = '#fff391';
+	        console.log(target);
+	        this.refs.triangle.style.left = 29 + target.key * 105 + 'px';
+	    },
 	    componentDidMount: function componentDidMount() {
 
 	        lineArr.unshift({ y: 336, x: 45 });
@@ -21904,46 +21911,19 @@
 	                width: window.innerWidth + 'px',
 	                height: window.lib.flexible.rem2px(422 / 75) + 'px',
 	                className: 'myCanvas' }),
-	            React.createElement('div', { style: { width: '8px', height: '8px', backgroundColor: 'red', borderRadius: '100%', position: 'absolute', top: huansuan(lineArr[0].y + 76, fontSize) + 'px', left: huansuan(lineArr[0].x - 8, fontSize) + 'px' } }),
-	            React.createElement('div', { style: { width: '8px', height: '8px', backgroundColor: 'red', borderRadius: '100%', position: 'absolute', top: huansuan(lineArr[1].y + 76, fontSize) + 'px', left: huansuan(lineArr[1].x - 8, fontSize) + 'px' } }),
-	            React.createElement('div', { style: { width: '8px', height: '8px', backgroundColor: 'red', borderRadius: '100%', position: 'absolute', top: huansuan(lineArr[2].y + 76, fontSize) + 'px', left: huansuan(lineArr[2].x - 8, fontSize) + 'px' } }),
-	            React.createElement('div', { style: { width: '8px', height: '8px', backgroundColor: 'red', borderRadius: '100%', position: 'absolute', top: huansuan(lineArr[3].y + 76, fontSize) + 'px', left: huansuan(lineArr[3].x - 8, fontSize) + 'px' } }),
-	            React.createElement('div', { style: { width: '8px', height: '8px', backgroundColor: 'red', borderRadius: '100%', position: 'absolute', top: huansuan(lineArr[4].y + 76, fontSize) + 'px', left: huansuan(lineArr[4].x - 8, fontSize) + 'px' } }),
-	            React.createElement('div', { style: { width: '8px', height: '8px', backgroundColor: 'red', borderRadius: '100%', position: 'absolute', top: huansuan(lineArr[5].y + 76, fontSize) + 'px', left: huansuan(lineArr[5].x - 8, fontSize) + 'px' } }),
+	            arr.forEach(function () {
+	                return React.createElement('div', { className: 'dot' });
+	            }),
 	            React.createElement(
 	                'ul',
-	                { className: 'much' },
-	                React.createElement(
-	                    'li',
-	                    { className: 'much-list' },
-	                    '01'
-	                ),
-	                React.createElement(
-	                    'li',
-	                    { className: 'much-list' },
-	                    '02'
-	                ),
-	                React.createElement(
-	                    'li',
-	                    { className: 'much-list' },
-	                    '03'
-	                ),
-	                React.createElement(
-	                    'li',
-	                    { className: 'much-list' },
-	                    '04'
-	                ),
-	                React.createElement(
-	                    'li',
-	                    { className: 'much-list' },
-	                    '05'
-	                ),
-	                React.createElement(
-	                    'li',
-	                    { className: 'much-list' },
-	                    '06'
-	                ),
-	                React.createElement('li', { className: 'triangle' })
+	                { className: 'much', onClick: this.handle },
+	                arrMonth.forEach(function (item, index) {
+	                    return React.createElement(
+	                        'li',
+	                        { className: 'much-list', key: index },
+	                        item
+	                    );
+	                })
 	            )
 	        );
 	    }
@@ -21951,59 +21931,13 @@
 	module.exports = Line;
 
 /***/ },
-/* 213 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(214);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(175)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/less-loader/index.js!./index.css", function() {
-				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/less-loader/index.js!./index.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
 /* 214 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(174)();
-	// imports
-
-
-	// module
-	exports.push([module.id, ".content {\n  margin: 0 auto;\n  width: 10rem;\n  position: relative;\n}\n.top {\n  position: relative;\n  height: 1.12rem;\n  text-align: center;\n  line-height: 1.12rem;\n  background-color: #31d0ab;\n  color: #fff;\n  font-size: 15px;\n  border-bottom: 1px solid #2bc6a2;\n}\n[data-dpr='2'] .top {\n  font-size: 30px;\n}\n[data-dpr='3'] .top {\n  font-size: 45px;\n}\n.myCanvas {\n  position: relative;\n  background-color: #31d0ab;\n  background-image: url(" + __webpack_require__(215) + ");\n  background-position: -0.93333333rem 3.46666667rem;\n  background-repeat: no-repeat;\n  background-size: 10.93333333rem 3.6rem;\n}\n.much {\n  position: absolute;\n  top: 5.69333333rem;\n  margin-left: 0.8rem;\n}\n.much-list {\n  float: left;\n  font-size: 16px;\n  color: #fff;\n  width: 1.4rem;\n  text-align: center;\n  line-height: 0.66666667rem;\n}\n[data-dpr='2'] .much-list {\n  font-size: 32px;\n}\n[data-dpr='3'] .much-list {\n  font-size: 48px;\n}\n.triangle {\n  border-top: 0.32rem solid transparent;\n  border-bottom: 0.32rem solid #fff;\n  border-right: 0.32rem solid transparent;\n  border-left: 0.32rem solid transparent;\n  position: absolute;\n  top: 0.44rem;\n  left: 1.78666667rem;\n}\n", ""]);
-
-	// exports
-
-
-/***/ },
-/* 215 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "./images/bg.png";
-
-/***/ },
-/* 216 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var React = __webpack_require__(1);
-	var css = __webpack_require__(217);
+	var css = __webpack_require__(215);
 
 	var Back = React.createClass({
 	    displayName: 'Back',
@@ -22019,13 +21953,13 @@
 	module.exports = Back;
 
 /***/ },
-/* 217 */
+/* 215 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(218);
+	var content = __webpack_require__(216);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(175)(content, {});
@@ -22045,7 +21979,7 @@
 	}
 
 /***/ },
-/* 218 */
+/* 216 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(174)();
@@ -22059,13 +21993,13 @@
 
 
 /***/ },
-/* 219 */
+/* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var React = __webpack_require__(1);
-	var css = __webpack_require__(220);
+	var css = __webpack_require__(218);
 
 	var Data = React.createClass({
 	    displayName: 'Data',
@@ -22132,7 +22066,7 @@
 	                        { className: 'elec-data' },
 	                        '00.0'
 	                    ),
-	                    React.createElement('img', { src: __webpack_require__(222), className: 'plus' }),
+	                    React.createElement('img', { src: __webpack_require__(220), className: 'plus' }),
 	                    React.createElement(
 	                        'span',
 	                        { className: 'data-free' },
@@ -22147,13 +22081,13 @@
 	module.exports = Data;
 
 /***/ },
-/* 220 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(221);
+	var content = __webpack_require__(219);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(175)(content, {});
@@ -22173,7 +22107,7 @@
 	}
 
 /***/ },
-/* 221 */
+/* 219 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(174)();
@@ -22181,16 +22115,62 @@
 
 
 	// module
-	exports.push([module.id, ".content {\n  width: 10rem;\n  margin: 0 auto;\n}\n.list-box {\n  background-color: #fff;\n}\n.list {\n  height: 1.28rem;\n  line-height: 1.28rem;\n  color: #333333;\n  margin-left: 0.52rem;\n  margin-right: 0.52rem;\n  font-size: 16px;\n  border-bottom: 1px solid #f0f0f0;\n}\n[data-dpr='2'] .list {\n  font-size: 32px;\n}\n[data-dpr='3'] .list {\n  font-size: 48px;\n}\n.unit {\n  float: right;\n  font-size: 12px;\n  color: #A5A5A5;\n}\n[data-dpr='2'] .unit {\n  font-size: 24px;\n}\n[data-dpr='3'] .unit {\n  font-size: 36px;\n}\n.data-free {\n  color: #2FDEB5;\n  float: right;\n  margin-right: 0.16rem;\n}\n.elec-data {\n  color: #F4D234;\n  float: right;\n  margin-right: 0.37333333rem;\n  margin-left: 0.16rem;\n}\n.plus {\n  width: 0.17333333rem;\n  height: 0.17333333rem;\n  float: right;\n  position: relative;\n  top: 0.53333333rem;\n}\n", ""]);
+	exports.push([module.id, ".content {\n  width: 10rem;\n  margin: 0 auto;\n}\n.list-box {\n  background-color: #fff;\n}\n.list {\n  height: 1.28rem;\n  line-height: 1.28rem;\n  color: #333333;\n  margin-left: 0.52rem;\n  margin-right: 0.52rem;\n  font-size: 16px;\n  border-bottom: 1px solid #f0f0f0;\n}\n[data-dpr='2'] .list {\n  font-size: 32px;\n}\n[data-dpr='3'] .list {\n  font-size: 48px;\n}\n.unit {\n  float: right;\n  font-size: 12px;\n  color: #A5A5A5;\n}\n[data-dpr='2'] .unit {\n  font-size: 24px;\n}\n[data-dpr='3'] .unit {\n  font-size: 36px;\n}\n.data-free {\n  color: #2FDEB5;\n  float: right;\n  margin-right: 0.16rem;\n}\n.elec-data {\n  color: #F4D234;\n  float: right;\n  margin-right: 0.33333333rem;\n  margin-left: 0.16rem;\n}\n.plus {\n  width: 0.17333333rem;\n  height: 0.17333333rem;\n  float: right;\n  position: relative;\n  top: 0.53333333rem;\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 222 */
+/* 220 */
 /***/ function(module, exports) {
 
 	module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4BpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo2MDAzMTFhMi0wNTBkLTQ0MzQtOWEzMC1lMjFhMWZiYTQ3YmIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NUU0NjgxN0RBRDcyMTFFNkE0RTJBMkI1MERFRjA2MUEiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NUU0NjgxN0NBRDcyMTFFNkE0RTJBMkI1MERFRjA2MUEiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpkNmM4OWYxYi0wZWNhLTRkNzctOTM2Ni1kYzQyYzAzYzRmYTkiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDowM2RiYjA0ZS1lOTM1LTExNzktYjc0NS1lZGE0YmVmMmFjZDYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz64CY2uAAAATElEQVR42mI8evQoAxawFIijgHgZEEejSzIxkAEGuSYWIF6FRdwcSttgkwdpCsVjqBwUY2hajcMmkOJHQHwSm6YwPPF0ZKTEE0CAAQB05Avow/EvpwAAAABJRU5ErkJggg=="
+
+/***/ },
+/* 221 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(222);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(175)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/less-loader/index.js!./index.css", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/less-loader/index.js!./index.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 222 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(174)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".content {\n  margin: 0 auto;\n  width: 10rem;\n  position: relative;\n}\n.top {\n  position: relative;\n  height: 1.12rem;\n  text-align: center;\n  line-height: 1.12rem;\n  background-color: #31d0ab;\n  color: #fff;\n  font-size: 15px;\n  border-bottom: 1px solid #2bc6a2;\n}\n[data-dpr='2'] .top {\n  font-size: 30px;\n}\n[data-dpr='3'] .top {\n  font-size: 45px;\n}\n.myCanvas {\n  position: relative;\n  background-color: #31d0ab;\n  background-image: url(" + __webpack_require__(223) + ");\n  background-position: -0.93333333rem 3.46666667rem;\n  background-repeat: no-repeat;\n  background-size: 10.93333333rem 3.6rem;\n}\n.much {\n  position: absolute;\n  top: 5.69333333rem;\n  margin-left: 0.8rem;\n}\n.much-list {\n  float: left;\n  font-size: 16px;\n  color: #fff;\n  width: 1.4rem;\n  text-align: center;\n  line-height: 0.66666667rem;\n}\n[data-dpr='2'] .much-list {\n  font-size: 32px;\n}\n[data-dpr='3'] .much-list {\n  font-size: 48px;\n}\n.triangle {\n  border-top: 0.32rem solid transparent;\n  border-bottom: 0.32rem solid #fff;\n  border-right: 0.32rem solid transparent;\n  border-left: 0.32rem solid transparent;\n  position: absolute;\n  top: 0.44rem;\n  left: 7.38666667rem;\n}\n.dot {\n  width: 0.10666667rem;\n  height: 0.10666667rem;\n  background-color: #f2ffc7;\n  border-radius: 100%;\n  position: absolute;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 223 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "./images/bg.png";
 
 /***/ }
 /******/ ]);

@@ -43,7 +43,12 @@ const App = React.createClass({
         xhr.open('POST', '', true);
         xhr.onload = function () {
             if (xhr.status >= 200 && xhr.status <= 304) {
-                
+                var res = JSON.parse(xhr.responseText);
+                if (res.status === 200) {
+
+                } else {
+                    
+                }
             }
         }
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");  

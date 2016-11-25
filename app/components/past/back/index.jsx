@@ -4,9 +4,9 @@ const css = require('./index.css');
 
 const Back = React.createClass({
     render () {
-        return <div className='back-btn'>
+        return <a className='back-btn' href="">
             返回
-        </div>
+        </a>
     }
 })
 

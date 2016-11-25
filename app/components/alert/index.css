@@ -1,9 +1,23 @@
+.alert-box-container {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 20;
+}
 .alert-box {
     width: 632 / 75rem;
     height: 559 / 75rem;
-    margin: 0 auto;
     border-radius: 15 / 75rem;
-    position: relative;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 20;
+    overflow: hidden;
 }
 .alert-top {
     background-color: #10e2ae;
@@ -59,16 +73,28 @@
 [data-dpr='3'] .alert-bottom {
     font-size: 16 * 3px;
 }
+[data-dpr="2"] .alert-inner {
+    font-size: 17 * 2px;
+}
+[data-dpr="3"] .alert-inner {
+    font-size: 17 * 3px;
+}
 .alert-back {
     float: left;
     width: 313 / 75rem;
     text-align: center;
     line-height: 105 / 75rem;
     border-right:1px solid #edecec;
+    &:active {
+        background-color: #f1f1f1;
+    }
 }
 .alert-confirm {
     float: left;   
     width: 313 / 75rem;   
     text-align: center;
     line-height: 105 / 75rem;
+    &:active {
+        background-color: #f1f1f1;
+    }
 }

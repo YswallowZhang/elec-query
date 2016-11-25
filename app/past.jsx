@@ -11,28 +11,24 @@ const Data = require('./components/past/data/index.jsx');
 const App = React.createClass({
     getInitialState() {
         return {
-           data:[
-                {
-                    start:'30',
-                    end:'80',
-                    free:'30',
-                    rest:'20'
-                }, {
-                    start:'80',
-                    end:'120',
-                    free:'30',
-                    rest:'10'                  
-                }
-           ]
+            focus: 5
         }
+    },
+    handleClick(event) {
+        if(event.target.className === 'triangle') return 
+        this.setState({
+            focus: parseInt(event.target.getAttribute('data-index'))
+        })
     },
     render() {
         return <div>
             <Line 
-
-
+                focus={this.state.focus}
+                handleClick={this.handleClick}
             />
-            <Data />
+            <Data 
+                focus={this.state.focus}
+            />
             <Back />
         </div>
     }

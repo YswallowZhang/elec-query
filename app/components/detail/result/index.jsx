@@ -35,7 +35,7 @@ const Result = React.createClass({
                 <span>抄表日期:</span>
                 <span className='what-date'>01月01日</span>
                 <span className='what-time'>08:00</span>
-                <span className='past-elec'>[往期电费]</span>
+                <a className='past-elec' href=''>[往期电费]</a>
             </div>
         </div>
     }

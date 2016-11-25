@@ -1,7 +1,8 @@
-.content {
+.line-box {
     margin: 0 auto;
     width: 750 / 75rem;
     position: relative;
+    height: 506 / 75rem;
 }
 .top {
     position: relative;
@@ -52,13 +53,23 @@
     border-right: 24 / 75rem solid transparent;
     border-left: 24 / 75rem solid transparent;
     position: absolute;
-    top: 33 / 75rem;
+    top: 32 / 75rem;
     left: 554 / 75rem;
 }
 .dot {
-    width: 8 / 75rem;
-    height: 8 / 75rem;
+    width: 15 / 75rem;
+    height: 15 / 75rem;
     background-color: #f2ffc7;
     border-radius: 100%;
     position:absolute;
+    z-index: 5
+}
+.alignment {
+    position: absolute;
+    width: 1px;
+    background-color: #fff;
+    height: 100 / 75rem;
+    top:0;
+    z-index: 3;
+    left:0;
 }

@@ -7,7 +7,8 @@ const Banner = require('./components/index/banner/index.jsx');
 const Buildings = require('./components/index/buildings/index.jsx');
 const Rooms = require('./components/index/rooms/index.jsx');
 const Btn = require('./components/index/button/index.jsx');
-const Alert = require('./components/alert/index.jsx')
+const Alert = require('./components/alert/index.jsx');
+
 const App = React.createClass({
     getInitialState() {
         return {
@@ -17,6 +18,7 @@ const App = React.createClass({
                 '选择楼栋',
                 '27栋',
             ],
+            showAlert: false
         }
     },
     changeBuilding(building) {
@@ -29,9 +31,14 @@ const App = React.createClass({
             room:room
         })
     },
+    changeAlert(bool) {
+        this.setState({
+            showAlert: bool
+        })
+    },
     sendInformation() {
         if(!this.state.room || this.state.building == '选择楼栋' || !this.state.building)
-            return alert('请完善您的信息')
+            return this.changeAlert(true);
         const xhr = new XMLHttpRequest();
         xhr.open('POST', '', true);
         xhr.onload = function () {
@@ -59,7 +66,16 @@ const App = React.createClass({
             <Btn 
                 sendInformation={this.sendInformation}
             />
-            
+            <Alert 
+                show={this.state.showAlert}
+                val='请完善寝室信息'
+                confirm={() => {
+                    this.changeAlert(false);
+                }}
+                back={() => {
+                    this.changeAlert(false);
+                }}
+            />
         </div>
     }
 })

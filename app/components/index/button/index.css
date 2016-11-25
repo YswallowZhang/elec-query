@@ -12,6 +12,9 @@
     font-size: 15px;
     letter-spacing: 8 / 75rem;
     border-radius: 10 / 75rem;
+    &:active {
+        background-color: rgb(16, 200, 174);
+    }
 }
 [data-dpr="2"] .confirm {
     font-size: 15 * 2px;

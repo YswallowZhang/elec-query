@@ -11,6 +11,30 @@
         <div id="root">
             
         </div>
+        <script>
+            var __data = {
+                buildings: [],
+                bindRoomUrl: '{:addons_url('ElectricityQuery://ElectricityQuery/verifyRoom')}',
+                dataQueryUrl: '{:addons_url('ElectricityQuery://ElectricityQuery/queryElec')}',
+                img: {
+                    elecmeter: '{:ADDON_PUBLIC_PATH}/images/elecmeter.png',
+                    banner: '{:ADDON_PUBLIC_PATH}/images/banner.png',
+                }
+            };
+            <?php
+                for ($i = 0; $i < count($data); $i ++) {
+            ?>
+                __data.buildings.push('<?php echo $data[$i]['building']; ?>')
+            <?php
+                }
+            ?>
+        </script>
+        <script>
+            window.addEventListener('load', function() {
+                FastClick.attach(document.body);
+            }, false);
+        </script>
+        <script src='fastclick.js'></script>
         <script src='index.js'></script>
     </body>
 </html>

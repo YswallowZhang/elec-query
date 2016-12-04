@@ -1,49 +1,22 @@
 const React = require('react');
 const css = require('./index.css');
 
-const arr = [{
-    elec_start: '121',
-    elec_end: '2121',
-    elec_free: '12',
-    elec_spend: '120',
-    elec_month: '05'
-}, {
-    elec_start: '121',
-    elec_end: '2121',
-    elec_free: '12',
-    elec_spend: '233',
-    elec_month: '06'
-}, {
-    elec_start: '121',
-    elec_end: '2121',
-    elec_free: '12',
-    elec_spend: '110',
-    elec_month: '07'
-}, {
-    elec_start: '121',
-    elec_end: '2121',
-    elec_free: '12',
-    elec_spend: '44',
-    elec_month: '08'
-}, {
-    elec_start: '121',
-    elec_end: '2121',
-    elec_free: '12',
-    elec_spend: '200',
-    elec_month: '09'
-}, {
-    elec_start: '121',
-    elec_end: '2121',
-    elec_free: '12',
-    elec_spend: '122',
-    elec_month: '10'
-}]
 const huansuan = (val, fontSize) => {
     return val / 75 * fontSize;
 };
 
+const getMax = (arr) => {
+    var max = 0, tmp;
+    arr.forEach((item) => {
+        tmp = parseFloat(item.elec_spend);
+        if(tmp > max)
+            max = tmp
+    });
+    return max;
+}
+
 const fontSize = parseFloat(document.documentElement.style.fontSize);
-const percent = 250  / 233;
+const percent = 250 / getMax(arr);
 const lineArr = arr.map(function (item, index) {
     var x;
     if(index == 0) {
@@ -88,6 +61,9 @@ const Line = React.createClass({
             </div>
             <canvas 
                 ref='myCanvas' 
+                style={{
+                    backgroundImage: `url(${__data.img.bg})`
+                }}
                 width={window.innerWidth + 'px'} 
                 height={window.lib.flexible.rem2px(422 / 75) + 'px'} 
                 className='myCanvas'>

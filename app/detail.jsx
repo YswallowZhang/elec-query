@@ -47,7 +47,7 @@ const App = React.createClass({
                     this.changeShowAlert(false);
                 }}
                 confirm={() => {
-                    window.location = '';
+                    window.location = __data.resetRoomUrl;
                 }}
             />
         </div>

@@ -16,39 +16,48 @@ const App = React.createClass({
             room: null,
             buildings: [
                 '选择楼栋',
-                '27栋',
-            ],
-            showAlert: false
+            ].concat(__data.buildings),
+            showAlert: false,
+            val: null
         }
     },
     changeBuilding(building) {
         this.setState({
             building: building
-        })
+        });
     },
     changeRoom(room) {
         this.setState({
             room:room
-        })
+        });
     },
-    changeAlert(bool) {
+    changeAlert(bool, val) {
+        if (val) 
+            return this.setState({
+                showAlert: bool,
+                val: val
+            })
         this.setState({
             showAlert: bool
-        })
+        });
     },
     sendInformation() {
-        if(!this.state.room || this.state.building == '选择楼栋' || !this.state.building)
-            return this.changeAlert(true);
+        console.log(this.state)
+        if(!this.state.room || this.state.building == '选择楼栋' || this.state.building === null)
+            return this.changeAlert(true, '请完善寝室信息');
         const xhr = new XMLHttpRequest();
-        xhr.open('POST', '', true);
-        xhr.onload = function () {
+        xhr.open('POST', __data.bindRoomUrl, true);
+        xhr.onload = () => {
             if (xhr.status >= 200 && xhr.status <= 304) {
                 var res = JSON.parse(xhr.responseText);
-                if (res.status === 200) {
-
-                } else {
-                    
-                }
+                this.setState({
+                    showAlert: true,
+                    val: res.info
+                });
+                if (res.status === 200)
+                    setTimeout(function () {
+                        window.location = __data.dataQueryUrl;
+                    }, 1000);
             }
         }
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");  
@@ -73,7 +82,7 @@ const App = React.createClass({
             />
             <Alert 
                 show={this.state.showAlert}
-                val='请完善寝室信息'
+                val={this.state.val}
                 confirm={() => {
                     this.changeAlert(false);
                 }}

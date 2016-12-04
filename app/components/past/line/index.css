@@ -23,7 +23,6 @@
 .myCanvas {
     position: relative;
     background-color: #31d0ab;
-    background-image: url('./images/bg.png');
     background-position: -70 / 75rem 260 / 75rem;
     background-repeat:no-repeat;
     background-size: 820 / 75rem 270 / 75rem;

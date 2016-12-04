@@ -15,7 +15,7 @@ const Buildings = React.createClass({
             <select className='choose-build' onChange={this.handleChange}>
                 {
                     this.props.buildings.map(function (item, index) {
-                        return <option key={index} value={item}>{ item }</option>
+                        return <option key={index} value={item}>{ item + '栋' }</option>
                     })
                 }
             </select>

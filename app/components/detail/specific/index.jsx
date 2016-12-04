@@ -19,9 +19,9 @@ const Specific = React.createClass({
             <ul className='list-box' style={{
                 display: this.props.listDown ? 'block' : 'none'
             }} ref='hidden'>
-                <li className='list'><span>电起度</span><span className='unit'>度</span><span className='specific-data'>11:2</span></li>
-                <li className='list'><span>电止度</span><span className='unit'>度</span><span className='specific-data'>2</span></li>
-                <li className='list'><span>当月免费电量</span><span className='unit'>度</span><span className='specific-data'>3</span></li>
+                <li className='list'><span>电起度</span><span className='unit'>度</span><span className='specific-data'>{__data.result.elec_start}</span></li>
+                <li className='list'><span>电止度</span><span className='unit'>度</span><span className='specific-data'>{__data.result.elec_end}</span></li>
+                <li className='list'><span>当月免费电量</span><span className='unit'>度</span><span className='specific-data'>{__data.result.elec_free}</span></li>
             </ul>
         </div>
     }

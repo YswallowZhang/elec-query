@@ -22,7 +22,7 @@ const Alert = React.createClass({
             <div className='alert-box'>
                 <div className='alert-top'>
                         <img src={require('./images/logo.png')} className='logo' />
-                        <img src={require('./images/decorate.png')} className='star'/>
+                        <img src={__data.img.decorate} className='star'/>
                 </div>
                 <div className='alert-middle'>
                     <div className='alert-inner'>
